@@ -7,5 +7,4 @@
 - Commity piš stručně a v jednom jazyce (např. `central: add MQTT reconnect`).
 - Každý pracuje primárně ve své složce, takže konflikty vznikají jen výjimečně.
 - `firmware/common/` měň jen po domluvě. Je to kontrakt mezi centrálou a node.
-- Hesla a klíče nikdy necommituj. Používej `secrets.h` (ignorovaný gitem) podle vzoru `secrets.example.h`.
 - Velké binární soubory (STL/STEP/PDF) commituj jen finální verze, ne každou iteraci.

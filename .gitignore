@@ -18,8 +18,6 @@ sdkconfig.old
 .DS_Store
 Thumbs.db
 
-# Tajemství (použij secrets.example.h jako vzor)
-secrets.h
 .env
 
 # Python

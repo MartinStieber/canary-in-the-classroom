@@ -6,14 +6,14 @@ Jako kanárek v dole: dřív než se začneme dusit, dá vědět, že je čas ot
 ## Jak to funguje
 
 ```
- [sensor-node] ──┐
- [sensor-node] ──┼──►  [central-station]  ──►  zobrazení / upozornění
- [sensor-node] ──┘
+ [sensor-node] ◄──┐
+ [sensor-node] ◄──┼── ESP-NOW dotaz ──  [central-station / panel s e-inkem]
+ [sensor-node] ◄──┘   (panel se probudí, zeptá se, překreslí, usne)
 ```
 
-- **sensor-node**: měří vzduch (CO₂, teplota, vlhkost, …) a posílá data centrále.
-- **central-station**: sbírá data z jednotek, vyhodnocuje a zobrazuje / signalizuje.
-- Obě strany sdílí definici protokolu v `firmware/common/`.
+- **sensor-node** (ESP32 + SCD41, z USB): měří CO₂, teplotu a vlhkost, počítá trend a historii 24 h a odpovídá na dotazy panelu.
+- **central-station** (ESPink v3.6 + e-paper 7,5", baterie): většinu času spí, periodicky si vyžádá data od uzlů a zobrazí je.
+- Iniciátorem komunikace je vždy panel. Definice protokolu je v `firmware/common/`.
 
 ## Struktura repa
 

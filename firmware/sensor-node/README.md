@@ -1,13 +1,22 @@
-# sensor-node
+# sensor-node (čidlový uzel)
 
-Firmware měřicí jednotky (Jakub Oriniak).
+Firmware čidlového uzlu (Jakub Oriniak).
 
-- Měří CO₂, teplotu, vlhkost a posílá je centrále ve formátu z `../common/protocol.h`.
+**Hardware:** ESP32 DevKit + LaskaKit SCD41 (CO₂, teplota, vlhkost, I2C přes konektor uSup), napájení z USB 5 V. Je stále zapnutý.
 
-## Build
+**Úkol:** měří CO₂/teplotu/vlhkost, počítá trend za 15 min, drží historii 24 h (10min průměry), hlásí chybu čidla a odpovídá na požadavky panelu přes ESP-NOW. Uzel sám nic neposílá. Protokol viz `../common/protocol.h`.
 
-_Doplnit (toolchain, příkazy)._
+## Build (PlatformIO)
+
+```bash
+cd firmware/sensor-node
+pio run                 # build
+pio run -t upload       # nahrát
+pio device monitor      # sériový monitor
+```
+
+Výchozí I2C piny: SDA = GPIO21, SCL = GPIO22 (ESP32 DevKit).
 
 ## Zapojení
 
-Schéma zapojení jednotky viz `../../hardware/`.
+Schéma zapojení viz `../../hardware/`.
