@@ -1,0 +1,37 @@
+# Build artefakty
+.pio/
+build/
+managed_components/
+sdkconfig.old
+*.o
+*.elf
+*.bin
+*.hex
+*.map
+
+# Editory / IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Tajemství (použij secrets.example.h jako vzor)
+secrets.h
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# CAD zálohy a dočasné soubory
+*.bak
+*.tmp
+*.3mf.bak
+*~
+*.kicad_prl
+fp-info-cache
+*-backups/
