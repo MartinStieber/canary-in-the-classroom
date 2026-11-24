@@ -37,3 +37,6 @@ fp-info-cache
 # ESP-IDF / PlatformIO generované konfigurace (sdkconfig.defaults se commituje)
 sdkconfig.*
 !sdkconfig.defaults
+
+# Sdílené VS Code workspace soubory chceme v repu
+!*.code-workspace

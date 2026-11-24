@@ -1,0 +1,9 @@
+{
+  "folders": [
+    { "name": "central-station (panel)", "path": "firmware/central-station" },
+    { "name": "common (protokol)", "path": "firmware/common" }
+  ],
+  "extensions": {
+    "recommendations": ["platformio.platformio-ide"]
+  }
+}
