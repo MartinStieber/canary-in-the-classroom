@@ -15,7 +15,9 @@ pio run -t upload       # nahrát
 pio device monitor      # sériový monitor
 ```
 
-Výchozí I2C piny: SDA = GPIO21, SCL = GPIO22 (ESP32 DevKit).
+Framework je ESP-IDF (přes PlatformIO). Aktuálně je to jen blink jako placeholder (LED na GPIO2). Sdílený protokol se includuje přes `src/CMakeLists.txt` (`../../common`).
+
+Typické I2C piny ESP32 DevKit pro SCD41: SDA = GPIO21, SCL = GPIO22.
 
 ## Zapojení
 
