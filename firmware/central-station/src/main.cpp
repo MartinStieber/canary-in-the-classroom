@@ -15,7 +15,7 @@ static const char *TAG = "central-station";
 // TODO: ověřit pin LED na ESPink v3.6 podle schématu. GPIO2 je jen zástupná hodnota.
 #define BLINK_GPIO GPIO_NUM_2
 
-void app_main(void)
+extern "C" void app_main(void)
 {
     ESP_LOGI(TAG, "canary panel, protocol v%d", PROTOCOL_VERSION);
 

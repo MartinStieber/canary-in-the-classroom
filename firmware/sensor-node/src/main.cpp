@@ -14,7 +14,7 @@ static const char *TAG = "sensor-node";
 // Modrá LED na ESP32 DevKit bývá na GPIO2 (podle verze desky se může lišit).
 #define BLINK_GPIO GPIO_NUM_2
 
-void app_main(void)
+extern "C" void app_main(void)
 {
     ESP_LOGI(TAG, "canary sensor-node, protocol v%d", PROTOCOL_VERSION);
 
