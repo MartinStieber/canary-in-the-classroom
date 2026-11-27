@@ -1,0 +1,9 @@
+{
+  "folders": [
+    { "name": "sensor-node (čidlový uzel)", "path": "firmware/sensor-node" },
+    { "name": "common (protokol)", "path": "firmware/common" }
+  ],
+  "extensions": {
+    "recommendations": ["platformio.platformio-ide"]
+  }
+}

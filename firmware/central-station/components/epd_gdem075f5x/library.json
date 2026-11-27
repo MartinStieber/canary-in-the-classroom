@@ -1,0 +1,8 @@
+{
+  "name": "epd_gdem075f5x",
+  "build": {
+    "srcDir": ".",
+    "includeDir": "include",
+    "srcFilter": ["-<*>", "+<src/*.c>", "+<fonts/*.c>"]
+  }
+}

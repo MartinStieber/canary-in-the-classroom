@@ -1,0 +1,17 @@
+version: "1.1.0"
+description: "Driver + graphics for Good Display GDEM075F52/F53 7.5\" BWRY e-paper (LaskaKit ESPink), with Czech fonts"
+license: "MIT"
+targets:
+  - esp32
+  - esp32s2
+  - esp32s3
+  - esp32c3
+  - esp32c6
+dependencies:
+  idf: ">=5.0"
+files:
+  exclude:
+    - "host/preview"
+    - "host/*.bmp"
+    - "host/*.png"
+    - "examples/**/build/**"
