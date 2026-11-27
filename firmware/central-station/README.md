@@ -4,7 +4,7 @@ Firmware zobrazovacího panelu (Martin).
 
 **Hardware:** LaskaKit ESPink v3.6 (ESP32-S3), e-paper 7,5" GDEM075F53 (800×480, černá/bílá/červená/žlutá), Li-Pol 4000 mAh.
 
-**Úkol:** většinu času spí, periodicky se probudí, přes ESP-NOW si vyžádá data od čidlových uzlů, překreslí displej a znovu usne. Protokol viz `../common/protocol.h`.
+**Úkol:** většinu času spí, periodicky se probudí, přes ESP-NOW si vyžádá data od čidlových uzlů, překreslí displej a znovu usne. Protokol viz `../common/let_proto.h` a PDF specifikace ve stejné složce.
 
 ## Build (PlatformIO)
 

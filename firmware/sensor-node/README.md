@@ -4,7 +4,7 @@ Firmware čidlového uzlu (Jakub Oriniak).
 
 **Hardware:** ESP32 DevKit + LaskaKit SCD41 (CO₂, teplota, vlhkost, I2C přes konektor uSup), napájení z USB 5 V. Je stále zapnutý.
 
-**Úkol:** měří CO₂/teplotu/vlhkost, počítá trend za 15 min, drží historii 24 h (10min průměry), hlásí chybu čidla a odpovídá na požadavky panelu přes ESP-NOW. Uzel sám nic neposílá. Protokol viz `../common/protocol.h`.
+**Úkol:** měří CO₂/teplotu/vlhkost, počítá trend za 15 min, drží historii 24 h (10min průměry), hlásí chybu čidla a odpovídá na požadavky panelu přes ESP-NOW. Uzel sám nic neposílá. Protokol viz `../common/let_proto.h` a PDF specifikace ve stejné složce.
 
 ## Build (PlatformIO)
 

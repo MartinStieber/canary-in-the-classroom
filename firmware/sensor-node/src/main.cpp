@@ -1,13 +1,13 @@
 // Čidlový uzel: placeholder (blink).
 // TODO: SCD41 přes I2C, trend 15 min, historie 24 h, detekce chyby čidla,
-//       ESP-NOW odpovědi na požadavky panelu (viz ../../common/protocol.h).
+//       ESP-NOW odpovědi na požadavky panelu (viz ../../common/let_proto.h).
 
 #include "driver/gpio.h"
 #include "esp_log.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 
-#include "protocol.h"
+#include "let_proto.h"
 
 static const char *TAG = "sensor-node";
 
@@ -16,7 +16,7 @@ static const char *TAG = "sensor-node";
 
 extern "C" void app_main(void)
 {
-    ESP_LOGI(TAG, "canary sensor-node, protocol v%d", PROTOCOL_VERSION);
+    ESP_LOGI(TAG, "canary sensor-node, protocol v%d", LET_VERSION);
 
     gpio_reset_pin(BLINK_GPIO);
     gpio_set_direction(BLINK_GPIO, GPIO_MODE_OUTPUT);
