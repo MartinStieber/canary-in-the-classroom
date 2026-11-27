@@ -14,6 +14,8 @@
 
 #include "let_proto.h"
 
+#include "dashboard_ui.h"
+
 static const char *TAG = "central-station";
 
 extern "C" void app_main(void)
@@ -23,19 +25,19 @@ extern "C" void app_main(void)
     epd_config_t cfg = EPD_CONFIG_ESPINK_V3();
     ESP_ERROR_CHECK(epd_init(&cfg));
 
-    epd_canvas_t *c = epd_canvas_create(EPD_ROT_0);     /* 96 kB framebuffer, white */
-
+    epd_canvas_t *c = epd_canvas_create(EPD_ROT_0);
     if (!c) {
         ESP_LOGE(TAG, "out of memory");
         return;
     }
-    epd_gfx_clear(c, EPD_BLACK);  /* black background, white text */
-    epd_gfx_text_box(c, 0, 0, c->width, c->height, "CHELLO WORLD!!!\nBěblbam", &epd_font_inter_bold_32,
-                     EPD_WHITE, EPD_ALIGN_CENTER, EPD_ALIGN_MIDDLE);
 
-    ESP_ERROR_CHECK(epd_show(c->fb));                   /* ~15-20 s, then the panel sleeps */
-    ESP_LOGI(TAG, "done, refresh took %u ms", (unsigned)epd_last_refresh_ms());
+    static dash_view_t view;            // static: ~1 kB, ať nezatěžuje zásobník
+    dashboard_demo_data(&view);
+    dashboard_draw(c, &view);
+
+    ESP_ERROR_CHECK(epd_show(c->fb));
+    ESP_LOGI(TAG, "hotovo, %u ms", (unsigned)epd_last_refresh_ms());
+
     epd_canvas_free(c);
-    epd_deinit();                                       /* panel supply off */
-    
+    epd_deinit();
 }
